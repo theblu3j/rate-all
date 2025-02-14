@@ -12,5 +12,7 @@ Fun colors!
 Automatically changes permissions to 744 for the mirrorlists so that the pkgstats service can submit (don't think this is a security risk as its read permission only, but if it is open an issue)
 
 Designed to work well integrated into [Apdatifier](https://github.com/exequtic/apdatifier) because it doesn't support non Arch repos with it's mirrorlist generator, but would probably work perfectly elsewhere
+
+Defaults to not automatically rating mirrors when ran so that you don't spam mirror servers whenever you integrate this into something
 ## Requirements
 bash, rate-mirrors
