@@ -22,3 +22,6 @@ Will not please the robot overlords
 
 ## Requirements
 bash, rate-mirrors
+
+## Future Plans
+Use [gum](https://github.com/charmbracelet/gum) to make it look nicer? Already used in Arch's devtools package.
