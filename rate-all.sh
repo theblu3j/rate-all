@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# rate-all.sh
+# rate-all
 # mostly a utility for me, that i adjusted to be usable on a few other arch forks and usable with chaotic-aur because friends use endeavouros + chaotic-aur
 # yes formatting is all over the place
 # yes a lot of the code is ripped from google or the rate-mirrors github
