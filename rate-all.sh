@@ -10,6 +10,15 @@
 # chmod 744 thing is for pkgstats timer, probably not a security risk i think
 
 
+interactive=false
+while getopts 'i' flag; do
+  case "${flag}" in
+    i)interactive=true ;;
+    *) print_usage
+       exit 1 ;;
+  esac
+done
+
 center() {
   termwidth="$(tput cols)"
   padding="$(printf '%0.1s' -{1..500})"
@@ -79,12 +88,17 @@ LIGHTPURPLE='\033[1;35m'
 LIGHTCYAN='\033[1;36m'
 WHITE='\033[1;37m'
 
-center "Would you like to rate mirrors? (y/N)"
-read input
-if [ "$input" = "y" ] || [ "$input" = "Y" ] || [ "$input" = "yes" ] ; then
-rate-all
+if [ $interactive = true ] ; then
+	center "Would you like to rate mirrors? (y/N)"
+	read input
 else
-echo "Skipping rating mirrors"
+	input='y'
+fi
+
+if [ "$input" = "y" ] || [ "$input" = "Y" ] || [ "$input" = "yes" ] ; then
+	rate-all
+else
+	echo "Skipping rating mirrors"
 fi
 
 
